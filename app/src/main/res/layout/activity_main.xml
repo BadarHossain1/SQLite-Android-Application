@@ -14,8 +14,11 @@
         android:id="@+id/texttitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Please enter details below"
-        android:textSize="24dp"
+        android:text="Royalty Estate"
+        android:textColor="#ebe729"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="35dp"
         android:layout_marginTop="20dp"
 
 
@@ -26,31 +29,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:hint="Name"
+        android:hint="Property Name"
         android:textSize="24dp"
         android:layout_below="@+id/texttitle"
         android:inputType="textPersonName"
         />
 
     <EditText
-        android:id="@+id/contact"
+        android:id="@+id/location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:hint="Contact"
+        android:hint="Location"
         android:textSize="24dp"
         android:layout_below="@+id/name"
-        android:inputType="number"
+        android:inputType="textPersonName"
         />
 
     <EditText
-        android:id="@+id/dob"
+        android:id="@+id/price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:hint="Date of Birth"
+        android:hint="Price in Dollars"
         android:textSize="24dp"
-        android:layout_below="@+id/contact"
+        android:layout_below="@+id/location"
         android:inputType="number"
         />
 
@@ -62,8 +65,11 @@
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="Insert new Data"
+        android:backgroundTint="#ebe729"
+        android:textColor="@color/black"
+
         android:layout_marginTop="30dp"
-        android:layout_below="@+id/dob"/>
+        android:layout_below="@+id/price"/>
 
     <Button
 
@@ -72,6 +78,8 @@
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="Update Data"
+        android:backgroundTint="#ebe729"
+        android:textColor="@color/black"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/btnInsert"/>
 
@@ -82,6 +90,8 @@
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="Delete the data"
+        android:backgroundTint="#ebe729"
+        android:textColor="@color/black"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/btnUpdate"/>
     <Button
@@ -91,6 +101,8 @@
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="View the data"
+        android:backgroundTint="#ebe729"
+        android:textColor="@color/black"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/btnDelete"/>
 

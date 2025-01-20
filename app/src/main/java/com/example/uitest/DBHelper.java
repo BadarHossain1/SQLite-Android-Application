@@ -17,7 +17,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("create Table Userdetails(name TEXT primary key , contact TEXT, dob TEXT)");
+        DB.execSQL("create Table Userdetails(name TEXT primary key , contact TEXT, dob TEXT)"); // change here
 
     }
 
@@ -27,12 +27,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public Boolean insertuserdata(String name, String contact, String dob){
+    public Boolean insertuserdata(String name, String location, String price){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", name);
-        contentValues.put("contact", contact);
-        contentValues.put("dob", dob);
+        contentValues.put("contact", location);
+        contentValues.put("dob", price);
         long result = DB.insert("Userdetails", null, contentValues);
         if(result == -1){
             return false;
@@ -43,12 +43,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public Boolean updateuserdata(String name, String contact, String dob){
+    public Boolean updateuserdata(String name, String location, String price){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put("contact", contact);
-        contentValues.put("dob", dob);
+        contentValues.put("contact", location);
+        contentValues.put("dob", price);
 
         Cursor cursor = DB.rawQuery("Select * from Userdetails where name = ?", new String[] {name});
         if(cursor.getCount()>0){

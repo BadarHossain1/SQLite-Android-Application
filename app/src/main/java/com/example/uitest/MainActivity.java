@@ -1,5 +1,6 @@
 package com.example.uitest;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +9,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText name, contact, dob;
+    EditText name, location, price;
     Button insert, update, delete, view;
 
     DBHelper DB;
@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         name = findViewById(R.id.name);
-        contact = findViewById(R.id.contact);
-        dob = findViewById(R.id.dob);
+        location = findViewById(R.id.location);
+        price = findViewById(R.id.price);
 
         insert = findViewById(R.id.btnInsert);
         update = findViewById(R.id.btnUpdate);
@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String nameTXT = name.getText().toString();
-                String contactTXT = contact.getText().toString();
-                String dobTXT = dob.getText().toString();
+                String locationTXT = location.getText().toString();
+                String priceTXT = price.getText().toString();
 
-                Boolean checkinsertdata = DB.insertuserdata(nameTXT, contactTXT, dobTXT);
+                Boolean checkinsertdata = DB.insertuserdata(nameTXT, locationTXT, priceTXT);
 
                 if(checkinsertdata==true)
                 {
@@ -70,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String nameTXT = name.getText().toString();
-                String contactTXT = contact.getText().toString();
-                String dobTXT = dob.getText().toString();
+                String locationTXT = location.getText().toString();
+                String priceTXT = price.getText().toString();
 
-                Boolean checkupdatedata = DB.updateuserdata(nameTXT, contactTXT, dobTXT);
+                Boolean checkupdatedata = DB.updateuserdata(nameTXT, locationTXT, priceTXT);
 
                 if(checkupdatedata==true)
                 {
@@ -117,16 +117,20 @@ public class MainActivity extends AppCompatActivity {
                 }
                 StringBuffer buffer = new StringBuffer();
                 while(res.moveToNext()){
-                    buffer.append("Name : "+res.getString(0)+"\n");
-                    buffer.append("Contact : "+res.getString(1)+"\n");
-                    buffer.append("Date of Birth : "+res.getString(2)+"\n\n");
+                    buffer.append("Property Name : "+res.getString(0)+"\n");
+                    buffer.append("Location : "+res.getString(1)+"\n");
+                    buffer.append("Price in Dollars : "+res.getString(2)+"\n\n");
 
                 }
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setCancelable(true);
-                builder.setTitle("User Entries");
-                builder.setMessage(buffer.toString());
-                builder.show();
+//                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//                builder.setCancelable(true);
+//                builder.setTitle("User Entries");
+//                builder.setMessage(buffer.toString());
+//                builder.show();
+
+                Intent intent = new Intent(MainActivity.this, viewUsersActivity.class);
+                intent.putExtra("user_data", buffer.toString());
+                startActivity(intent);
 
             }
         });
