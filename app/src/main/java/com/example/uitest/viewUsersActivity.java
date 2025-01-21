@@ -37,11 +37,11 @@ public class viewUsersActivity extends AppCompatActivity {
             String[] entries = userData.split("\n\n");
 
             TextView title = new TextView(this);
-            title.setText("Royalty Estate"); // Title text
-            title.setTextSize(28); // Set title text size
-            title.setTextColor(Color.YELLOW); // Set title color
-            title.setTypeface(null, Typeface.BOLD); // Make the title bold
-            title.setPadding(0, 40, 0, 20); // Add padding (top and bottom)
+            title.setText("Royalty Estate");
+            title.setTextSize(28);
+            title.setTextColor(Color.YELLOW);
+            title.setTypeface(null, Typeface.BOLD);
+            title.setPadding(0, 40, 0, 20);
 
 // Set layout parameters for the title
             LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(

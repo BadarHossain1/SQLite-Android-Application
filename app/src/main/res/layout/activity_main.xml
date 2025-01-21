@@ -15,11 +15,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Royalty Estate"
+        android:tooltipText="Royalty Estate"
         android:textColor="#ebe729"
         android:textStyle="bold"
         android:textAlignment="center"
         android:textSize="35dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
 
 
         />
@@ -61,49 +63,54 @@
     <Button
 
         android:id="@+id/btnInsert"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="Insert new Data"
         android:backgroundTint="#ebe729"
         android:textColor="@color/black"
 
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/price"/>
 
     <Button
 
         android:id="@+id/btnUpdate"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="Update Data"
         android:backgroundTint="#ebe729"
         android:textColor="@color/black"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/btnInsert"/>
 
     <Button
 
         android:id="@+id/btnDelete"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:text="Delete the data"
         android:backgroundTint="#ebe729"
         android:textColor="@color/black"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/btnUpdate"/>
     <Button
 
         android:id="@+id/btnView"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:textSize="24dp"
-        android:text="View the data"
+        android:text="View All"
         android:backgroundTint="#ebe729"
         android:textColor="@color/black"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
+        android:padding="12dp"
         android:layout_below="@+id/btnDelete"/>
 
 
